@@ -1,36 +1,51 @@
 <!DOCTYPE html>
-<html lang="{{ site.lang | default: "zh-CN" }}">
+<html lang="{{ site.lang | default: 'zh-CN' }}">
   <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{% if page.title %}{{ page.title }} – {% endif %}{{ site.title | default: "我的主页" }}</title>
-    <link rel="stylesheet" href="{{ "/assets/css/style.css" | relative_url }}">
+    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
   </head>
-  <!-- 关键修改：清除 body 默认边距，不添加任何其他属性 -->
-  <body style="margin: 0; padding: 0; background: #f0edf5; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
+  <body style="margin: 0 !important; padding: 0 !important; background: #f0edf5; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
 
-    <!-- 页眉：保持原始样式，不加任何 margin-top 或 position 属性 -->
-    <header style="background: #1a1a2e; padding: 16px 40px; width: 100%; display: flex; justify-content: space-between; align-items: center; box-sizing: border-box; flex-wrap: wrap; gap: 10px;">
+    <!-- 页眉：强制贴顶，清除所有可能的下移样式 -->
+    <header style="
+      position: relative !important;
+      top: 0 !important;
+      left: 0 !important;
+      right: 0 !important;
+      margin: 0 !important;
+      margin-top: 0 !important;
+      padding: 16px 40px !important;
+      background: #1a1a2e !important;
+      width: 100% !important;
+      display: flex !important;
+      justify-content: space-between !important;
+      align-items: center !important;
+      box-sizing: border-box !important;
+      flex-wrap: wrap !important;
+      gap: 10px !important;
+      z-index: 1000 !important;
+    ">
       <div class="site-title">
-        <a href="{{ "/" | relative_url }}" style="font-size: 1.6em; font-weight: 700; text-decoration: none; color: #ffffff;">
+        <a href="{{ '/' | relative_url }}" style="font-size: 1.6em !important; font-weight: 700 !important; text-decoration: none !important; color: #ffffff !important;">
           {{ site.title | default: "我的主页" }}
         </a>
       </div>
-      <div style="display: flex; gap: 24px; align-items: center;">
-        <a href="{{ "/" | relative_url }}" style="text-decoration: none; color: #c8b8ff; font-weight: 500;">首页</a>
-        <a href="/lun-wen-bi-ji/" style="text-decoration: none; color: #c8b8ff; font-weight: 500;">论文笔记</a>
-        <a href="https://github.com/{{ site.github.owner_name | default: "Anonymous-afk123" }}" style="text-decoration: none; color: #c8b8ff; font-weight: 500;">GitHub</a>
+      <div style="display: flex !important; gap: 24px !important; align-items: center !important;">
+        <a href="{{ '/' | relative_url }}" style="text-decoration: none !important; color: #c8b8ff !important; font-weight: 500 !important;">首页</a>
+        <a href="{{ '/lun-wen-bi-ji/' | relative_url }}" style="text-decoration: none !important; color: #c8b8ff !important; font-weight: 500 !important;">论文笔记</a>
+        <a href="https://github.com/{{ site.github.owner_name | default: 'Anonymous-afk123' }}" style="text-decoration: none !important; color: #c8b8ff !important; font-weight: 500 !important;">GitHub</a>
       </div>
     </header>
 
-    <!-- 内容区域：只加顶部边距，防止被页眉遮挡 -->
-    <div style="max-width: 1200px; margin: 80px auto 20px; padding: 0 30px;">
+    <!-- 内容区域：只要和页眉保持正常间距，不要被遮挡 -->
+    <div style="max-width: 1200px !important; margin: 40px auto 20px !important; padding: 0 30px !important;">
       {{ content }}
     </div>
 
-    <!-- 页脚 -->
-    <footer style="text-align: center; padding: 20px 0; color: #888; font-size: 0.9em; border-top: 1px solid #ddd; margin-top: 30px; max-width: 1200px; margin-left: auto; margin-right: auto;">
+    <footer style="text-align: center !important; padding: 20px 0 !important; color: #888 !important; font-size: 0.9em !important; border-top: 1px solid #ddd !important; margin-top: 30px !important; max-width: 1200px !important; margin-left: auto !important; margin-right: auto !important;">
       &copy; {{ site.time | date: "%Y" }} {{ site.author | default: "Anonymous-afk123" }}
     </footer>
   </body>
