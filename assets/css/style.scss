@@ -4,7 +4,7 @@
 
 /* 加宽整个页面的内容区 */
 .wrapper {
-  max-width: 1200px !important;  /* 原来是900px左右，改为1200px */
+  max-width: 1200px !important;
   margin: 0 auto;
   padding: 0 20px;
 }
@@ -17,23 +17,4 @@
 /* 让主内容区占更多宽度 */
 .main-content {
   max-width: 100% !important;
-}
-/* 强制让页眉贴顶，覆盖主题默认样式 */
-header {
-  position: relative !important;
-  top: 0 !important;
-  margin-top: 0 !important;
-  margin-bottom: 0 !important;
-  padding-top: 16px !important;
-  padding-bottom: 16px !important;
-  background: #1a1a2e !important;
-  width: 100% !important;
-  z-index: 1000 !important;
-}
-
-/* 让内容区不要被页眉挡住，并保持合适间距 */
-.main-content,
-.wrapper,
-div[style*="max-width: 1200px"] {
-  margin-top: 40px !important;
 }
