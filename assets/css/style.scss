@@ -18,3 +18,22 @@
 .main-content {
   max-width: 100% !important;
 }
+/* 强制让页眉贴顶，覆盖主题默认样式 */
+header {
+  position: relative !important;
+  top: 0 !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  padding-top: 16px !important;
+  padding-bottom: 16px !important;
+  background: #1a1a2e !important;
+  width: 100% !important;
+  z-index: 1000 !important;
+}
+
+/* 让内容区不要被页眉挡住，并保持合适间距 */
+.main-content,
+.wrapper,
+div[style*="max-width: 1200px"] {
+  margin-top: 40px !important;
+}
