@@ -7,9 +7,9 @@
     <title>{% if page.title %}{{ page.title }} – {% endif %}{{ site.title | default: "我的主页" }}</title>
     <link rel="stylesheet" href="{{ "/assets/css/style.css" | relative_url }}">
   </head>
-  <body style="margin: 0; padding: 0; background: #ff0000; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
+  <body style="margin: 0 !important; padding: 0 !important; background: #f0edf5; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
 
-    <!-- ===== 页眉：横跨整个顶部，深色背景，紧贴最顶上 ===== -->
+    <!-- ===== 页眉：横跨整个顶部，紧贴最顶上 ===== -->
     <header style="background: #1a1a2e; padding: 16px 40px; width: 100%; display: flex; justify-content: space-between; align-items: center; box-sizing: border-box; flex-wrap: wrap; gap: 10px; margin: 0;">
       <div class="site-title">
         <a href="{{ "/" | relative_url }}" style="font-size: 1.6em; font-weight: 700; text-decoration: none; color: #ffffff;">
@@ -24,7 +24,7 @@
     </header>
 
     <!-- ===== 内容区域：居中，加宽，不被页眉挡住 ===== -->
-    <div style="max-width: 1200px; margin: 20px auto; padding: 0 30px;">
+    <div style="max-width: 1200px; margin: 80px auto; padding: 0 30px;">
       {{ content }}
     </div>
 
