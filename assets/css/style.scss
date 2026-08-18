@@ -1,0 +1,20 @@
+---
+---
+@import "{{ site.theme }}";
+
+/* 加宽整个页面的内容区 */
+.wrapper {
+  max-width: 1200px !important;  /* 原来是900px左右，改为1200px */
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* 如果侧边栏存在，也稍微调整一下 */
+.sidebar-wrapper {
+  max-width: 300px !important;
+}
+
+/* 让主内容区占更多宽度 */
+.main-content {
+  max-width: 100% !important;
+}
